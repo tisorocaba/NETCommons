@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorocaba.Commons.Foundation", "Sorocaba.Commons.Foundation\Sorocaba.Commons.Foundation.csproj", "{010CF7FE-09D9-4C74-9CFD-BA3DFF0F0F89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorocaba.Commons.Http", "Sorocaba.Commons.Http\Sorocaba.Commons.Http.csproj", "{AAA6C5D7-F06D-4BC0-9E83-9C685937DE00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorocaba.Commons.Entity", "Sorocaba.Commons.Entity\Sorocaba.Commons.Entity.csproj", "{2AEF74FB-84F0-4660-A9A1-A949DDADE8CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorocaba.Commons.Ninject", "Sorocaba.Commons.Ninject\Sorocaba.Commons.Ninject.csproj", "{8D27D5A2-B080-496D-83B3-054922F7D3E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorocaba.Commons.Comdata", "Sorocaba.Commons.Comdata\Sorocaba.Commons.Comdata.csproj", "{F8D2E37D-FC18-4CC4-B666-1674B4E2E576}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{010CF7FE-09D9-4C74-9CFD-BA3DFF0F0F89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{010CF7FE-09D9-4C74-9CFD-BA3DFF0F0F89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{010CF7FE-09D9-4C74-9CFD-BA3DFF0F0F89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{010CF7FE-09D9-4C74-9CFD-BA3DFF0F0F89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAA6C5D7-F06D-4BC0-9E83-9C685937DE00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAA6C5D7-F06D-4BC0-9E83-9C685937DE00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAA6C5D7-F06D-4BC0-9E83-9C685937DE00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAA6C5D7-F06D-4BC0-9E83-9C685937DE00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AEF74FB-84F0-4660-A9A1-A949DDADE8CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AEF74FB-84F0-4660-A9A1-A949DDADE8CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AEF74FB-84F0-4660-A9A1-A949DDADE8CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AEF74FB-84F0-4660-A9A1-A949DDADE8CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D27D5A2-B080-496D-83B3-054922F7D3E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D27D5A2-B080-496D-83B3-054922F7D3E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D27D5A2-B080-496D-83B3-054922F7D3E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D27D5A2-B080-496D-83B3-054922F7D3E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8D2E37D-FC18-4CC4-B666-1674B4E2E576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8D2E37D-FC18-4CC4-B666-1674B4E2E576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8D2E37D-FC18-4CC4-B666-1674B4E2E576}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8D2E37D-FC18-4CC4-B666-1674B4E2E576}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

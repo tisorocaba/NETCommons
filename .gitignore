@@ -1,0 +1,13 @@
+.vs
+packages
+Sorocaba.Commons.Comdata/bin
+Sorocaba.Commons.Comdata/obj
+Sorocaba.Commons.Entity/bin
+Sorocaba.Commons.Entity/obj
+Sorocaba.Commons.Foundation/bin
+Sorocaba.Commons.Foundation/obj
+Sorocaba.Commons.Http/bin
+Sorocaba.Commons.Http/obj
+Sorocaba.Commons.Ninject/bin
+Sorocaba.Commons.Ninject/obj
+*.nupkg
