@@ -10,4 +10,4 @@ Sorocaba.Commons.Http/bin
 Sorocaba.Commons.Http/obj
 Sorocaba.Commons.Ninject/bin
 Sorocaba.Commons.Ninject/obj
-*.nupkg
+#*.nupkg
