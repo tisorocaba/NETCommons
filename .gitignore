@@ -1,5 +1,7 @@
 .vs
 packages
+Sorocaba.Commons.Bundle/bin
+Sorocaba.Commons.Bundle/obj
 Sorocaba.Commons.Comdata/bin
 Sorocaba.Commons.Comdata/obj
 Sorocaba.Commons.Entity/bin
@@ -10,4 +12,4 @@ Sorocaba.Commons.Http/bin
 Sorocaba.Commons.Http/obj
 Sorocaba.Commons.Ninject/bin
 Sorocaba.Commons.Ninject/obj
-#*.nupkg
+*.nupkg

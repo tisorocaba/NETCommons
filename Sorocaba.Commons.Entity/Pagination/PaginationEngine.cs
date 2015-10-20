@@ -56,19 +56,26 @@ namespace Sorocaba.Commons.Entity.Pagination {
             }
 
             int page = parameters.Page;
-            int itensPerPage = parameters.ItensPerPage;
+            int itemsPerPage = parameters.ItemsPerPage;
             long itemCount = query.Count();
-            int pageCount = (int) Math.Ceiling((double) itemCount / (double) itensPerPage);
+            int pageCount = (int) Math.Ceiling((double) itemCount / (double) itemsPerPage);
             if (page > pageCount) {
                 page = pageCount;
             }
             if (page == 0) {
                 page = 1;
             }
-            int itemOffset = ((page - 1) * itensPerPage) + 1;
+            int itemOffset = ((page - 1) * itemsPerPage) + 1;
             itemOffset = (itemOffset <= 0) ? 0 : itemOffset;
 
-            List<T> itemList = query.Skip((page - 1) * itensPerPage).Take(itensPerPage).ToList();
+            if (parameters.ShowAllItems) {
+                page = 1;
+                pageCount = 1;
+                itemsPerPage = (int) itemCount;
+                itemOffset = 0;
+            }
+
+            List<T> itemList = query.Skip((page - 1) * itemsPerPage).Take(itemsPerPage).ToList();
 
             return new PaginatedResult<T> {
                 ItemCount = itemCount,

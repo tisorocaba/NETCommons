@@ -18,7 +18,9 @@ namespace Sorocaba.Commons.Http.Exceptions.Translation {
         public void SetFromException(Exception exception) {
             ErrorMessage = exception.Message;
             ErrorType = exception.GetType().FullName;
-            ErrorStackTrace = exception.StackTrace.Split("\r\n");
+            if (exception.StackTrace != null) {
+                ErrorStackTrace = exception.StackTrace.Split("\r\n");
+            }
         }
     }
 }

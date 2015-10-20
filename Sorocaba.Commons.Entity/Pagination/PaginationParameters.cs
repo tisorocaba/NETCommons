@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 namespace Sorocaba.Commons.Entity.Pagination {
     public class PaginationParameters {
         public int Page { get; set; }
-        public int ItensPerPage { get; set; }
+        public int ItemsPerPage { get; set; }
+        public bool ShowAllItems { get; set; }
         public ICollection<Sorter> Sorters { get; set; }
         public ICollection<Filter> Filters { get; set; }
         public ICollection<Filter> FullFilters { get; set; }

@@ -10,7 +10,7 @@ using System.Web.Http.Filters;
 namespace Sorocaba.Commons.Http.Json.Binding {
     public class JsonBindingErrorActionFilter : ActionFilterAttribute {
         public override void OnActionExecuting(HttpActionContext actionContext) {
-            if (HttpContext.Current.Items["JSON_BINDING_ERROR"] != null) {
+            if (HttpContext.Current != null && HttpContext.Current.Items["JSON_BINDING_ERROR"] != null) {
                 throw new JsonBindingException((Exception) HttpContext.Current.Items["JSON_BINDING_ERROR"]);
            }
         }
