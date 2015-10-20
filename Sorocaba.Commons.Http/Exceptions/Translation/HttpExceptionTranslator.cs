@@ -44,6 +44,7 @@ namespace Sorocaba.Commons.Http.Exceptions.Translation {
                     if (t.TranslateException(exception, out message, out newException)) {
                         responseData.Message = message;
                         responseData.SetFromException(newException);
+                        exception = newException;
                         break;
                     }
                 }

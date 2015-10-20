@@ -74,11 +74,15 @@
     <Compile Include="Conventions\CustomConvention.cs" />
     <Compile Include="EntityModel\AbstractEntity.cs" />
     <Compile Include="EntityModel\CollectionUpdater.cs" />
+    <Compile Include="EntityModel\CollectionUtils.cs" />
+    <Compile Include="EntityModel\DbContextExtensions.cs" />
     <Compile Include="EntityModel\DbSetExtensions.cs" />
     <Compile Include="EntityModel\DoubleKeyEntity.cs" />
     <Compile Include="EntityModel\EntityNotFoundException.cs" />
     <Compile Include="EntityModel\IEntity.cs" />
+    <Compile Include="EntityModel\QuadrupleKeyEntity.cs" />
     <Compile Include="EntityModel\SingleKeyEntity.cs" />
+    <Compile Include="EntityModel\TripleKeyEntity.cs" />
     <Compile Include="ExceptionTranslator\DbExceptionTranslator.cs" />
     <Compile Include="ExceptionTranslator\DbWrappedException.cs" />
     <Compile Include="Pagination\Filter.cs" />

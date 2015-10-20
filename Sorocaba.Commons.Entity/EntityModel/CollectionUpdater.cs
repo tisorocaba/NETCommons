@@ -41,17 +41,29 @@ namespace Sorocaba.Commons.Entity.EntityModel {
             return this;
         }
 
-        public void Execute() {
-            var inserted = dataCollection.Where(i => i.Key == null).ToList();
-            var notInserted = dataCollection.Where(i => i.Key != null).ToList();
-            var deleted = baseCollection.Except(notInserted).ToList();
-            var updated = baseCollection.Except(deleted).ToList();
+        public void Execute(bool insertWithId = false) {
 
-            deleted.ForEach(deleteCallback);
-            inserted.ForEach(insertCallback);
-            updated.ForEach(i =>
-                updateCallback(i, dataCollection.Where(j => i.Equals(j)).First())
-            );
+            var itemsWithId = dataCollection.Where(i => i.Key != null).ToList();
+            var itemsWithoutId = dataCollection.Where(i => i.Key == null).ToList();
+
+            var insertedItems = itemsWithId.Except(baseCollection).ToList();
+            var updatedItems = baseCollection.Intersect(itemsWithId).ToList();
+            var deletedItems = baseCollection.Except(itemsWithId).ToList();
+
+            if (deleteCallback != null) {
+                deletedItems.ForEach(deleteCallback);
+            }
+            if (insertCallback != null) {
+                if (insertWithId) {
+                    insertedItems.ForEach(insertCallback);
+                }
+                itemsWithoutId.ForEach(insertCallback);
+            }
+            if (updateCallback != null) {
+                updatedItems.ForEach(i =>
+                    updateCallback(i, dataCollection.Where(j => i.Equals(j)).First())
+                );
+            }
         }
     }
 }

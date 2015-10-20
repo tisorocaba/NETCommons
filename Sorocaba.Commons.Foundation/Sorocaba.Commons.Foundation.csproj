@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\BusinessException.cs" />
     <Compile Include="Exceptions\ExceptionUtils.cs" />
     <Compile Include="Exceptions\IBussinessException.cs" />
     <Compile Include="Exceptions\IDataException.cs" />

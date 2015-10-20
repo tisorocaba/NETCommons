@@ -19,9 +19,14 @@ namespace Sorocaba.Commons.Entity.Pagination {
                     page = 1;
                 }
                 
-                int itensPerPage;
-                if (GetParameter("itens_per_page") == null || !Int32.TryParse(GetParameter("itens_per_page"), out itensPerPage)) {
-                    itensPerPage = 10;
+                int itemsPerPage;
+                if (GetParameter("items_per_page") == null || !Int32.TryParse(GetParameter("items_per_page"), out itemsPerPage)) {
+                    itemsPerPage = 10;
+                }
+
+                bool showAllItems;
+                if (GetParameter("show_all_items") == null || !bool.TryParse(GetParameter("show_all_items"), out showAllItems)) {
+                    showAllItems = false;
                 }
 
                 List<Sorter> sorters = new List<Sorter>();
@@ -57,7 +62,8 @@ namespace Sorocaba.Commons.Entity.Pagination {
 
                 return new PaginationParameters {
                     Page = page,
-                    ItensPerPage = itensPerPage,
+                    ItemsPerPage = itemsPerPage,
+                    ShowAllItems = showAllItems,
                     Sorters = sorters,
                     Filters = filters,
                     FullFilters = fullFilters
