@@ -122,11 +122,11 @@ namespace Sorocaba.Commons.Entity.Pagination {
 
             ParameterExpression entityExpression;
             Expression propertyExpression = TypeUtils.GetPropertyExpression<T>(fName, out entityExpression);
-            ConstantExpression argumentExpresson = Expression.Constant(fValue);
+            ConstantExpression argumentExpression = Expression.Constant(fValue);
 
             if (fOperator == Operators.LIKE.Symbol || fOperator == Operators.LIKE_ALTERNATIVE.Symbol) {
 
-                argumentExpresson = Expression.Constant(fValue.ToString());
+                argumentExpression = Expression.Constant(fValue.ToString());
 
                 if (propType == (typeof(bool)) || propType == (typeof(bool?))) {
                     Exception(Strings.LikeNotSupportedForDataType(propType.Name, fName));
@@ -149,7 +149,7 @@ namespace Sorocaba.Commons.Entity.Pagination {
             }
 
             return Expression.Lambda<Func<T, bool>>(
-                Operators.GetBySymbol(fOperator).Expression(propertyExpression, argumentExpresson),
+                Operators.GetBySymbol(fOperator).Expression(propertyExpression, Expression.Convert(argumentExpression, propertyExpression.Type)),
                 entityExpression
             );
         }
