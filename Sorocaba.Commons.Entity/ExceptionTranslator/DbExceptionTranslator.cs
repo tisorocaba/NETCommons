@@ -41,14 +41,12 @@ namespace Sorocaba.Commons.Entity.ExceptionTranslator {
             if (exception is DbUpdateException || exception is SqlException) {
                 message = Strings.DbUpdateError;
                 newException = ExceptionUtils.GetInnerException(exception);
-                if (exception is SqlException) {
-                    foreach (var regex in Strings.ConstraintRegexes) {
-                        if (regex.IsMatch(newException.Message)) {
-                            string constraintName = regex.Matches(exception.Message)[0].Groups["cName"].ToString();
-                            string constraintMessage = GetConstraintMessage(constraintName);
-                            if (message != null) {
-                                message = constraintMessage;
-                            }
+                foreach (var regex in Strings.ConstraintRegexes) {
+                    if (regex.IsMatch(newException.Message)) {
+                        string constraintName = regex.Matches(newException.Message)[0].Groups["cName"].ToString();
+                        string constraintMessage = GetConstraintMessage(constraintName);
+                        if (message != null) {
+                            message = constraintMessage;
                         }
                     }
                 }

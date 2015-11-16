@@ -15,7 +15,7 @@ namespace Sorocaba.Commons.Entity.Pagination {
         public ICollection<Filter> FullFilters { get; set; }
     }
 
-    public static class SorterCollectionExtensions {
+    public static class FilterCollectionExtensions {
 
         public static Filter GetFilter(this ICollection<Filter> filters, string field) {
             return filters

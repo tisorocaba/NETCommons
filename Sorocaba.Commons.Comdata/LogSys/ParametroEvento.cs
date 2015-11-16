@@ -13,6 +13,12 @@ namespace Sorocaba.Commons.Comdata.LogSys {
             this.Valor = valor;
         }
 
+        public ParametroEvento(int ordem, string nome, int valor) {
+            this.Ordem = ordem;
+            this.Nome = nome;
+            this.Valor = valor.ToString();
+        }
+
         public int Ordem { get; set; }
         public string Nome { get; set; }
         public string Valor { get; set; }

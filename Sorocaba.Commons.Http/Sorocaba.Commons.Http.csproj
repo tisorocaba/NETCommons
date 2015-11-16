@@ -35,6 +35,10 @@
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Sorocaba.Commons.Foundation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sorocaba.Commons.Foundation.1.0.0.0\lib\net45\Sorocaba.Commons.Foundation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -55,6 +59,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Csv\CsvWriter.cs" />
+    <Compile Include="Csv\HttpCsvPushStreamResponse.cs" />
     <Compile Include="Exceptions\Translation\HttpExceptionTranslator.cs" />
     <Compile Include="Exceptions\Translation\HttpExceptionData.cs" />
     <Compile Include="Exceptions\Translation\HttpExceptionFilterAttribute.cs" />
@@ -75,12 +81,7 @@
     <None Include="Package.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Sorocaba.Commons.Foundation\Sorocaba.Commons.Foundation.csproj">
-      <Project>{010cf7fe-09d9-4c74-9cfd-ba3dff0f0f89}</Project>
-      <Name>Sorocaba.Commons.Foundation</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

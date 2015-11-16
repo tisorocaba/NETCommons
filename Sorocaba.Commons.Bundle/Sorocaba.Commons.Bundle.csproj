@@ -31,8 +31,65 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LinqKit, Version=1.1.2.0, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <HintPath>..\packages\LINQKit.1.1.2\lib\net45\LinqKit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.3.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sorocaba.Commons.Comdata, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sorocaba.Commons.Comdata.2.0.0.0\lib\net45\Sorocaba.Commons.Comdata.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sorocaba.Commons.Entity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sorocaba.Commons.Entity.1.0.0.0\lib\net45\Sorocaba.Commons.Entity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sorocaba.Commons.Foundation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sorocaba.Commons.Foundation.1.0.0.0\lib\net45\Sorocaba.Commons.Foundation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sorocaba.Commons.Http, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sorocaba.Commons.Http.1.0.0.0\lib\net45\Sorocaba.Commons.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sorocaba.Commons.Ninject, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sorocaba.Commons.Ninject.2.0.0.0\lib\net45\Sorocaba.Commons.Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.4\lib\net40\System.Linq.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.0.0\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,26 +101,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sorocaba.Commons.Comdata\Sorocaba.Commons.Comdata.csproj">
-      <Project>{f8d2e37d-fc18-4cc4-b666-1674b4e2e576}</Project>
-      <Name>Sorocaba.Commons.Comdata</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sorocaba.Commons.Entity\Sorocaba.Commons.Entity.csproj">
-      <Project>{2aef74fb-84f0-4660-a9a1-a949ddade8cf}</Project>
-      <Name>Sorocaba.Commons.Entity</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sorocaba.Commons.Foundation\Sorocaba.Commons.Foundation.csproj">
-      <Project>{010cf7fe-09d9-4c74-9cfd-ba3dff0f0f89}</Project>
-      <Name>Sorocaba.Commons.Foundation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sorocaba.Commons.Http\Sorocaba.Commons.Http.csproj">
-      <Project>{aaa6c5d7-f06d-4bc0-9e83-9c685937de00}</Project>
-      <Name>Sorocaba.Commons.Http</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sorocaba.Commons.Ninject\Sorocaba.Commons.Ninject.csproj">
-      <Project>{8d27d5a2-b080-496d-83b3-054922f7d3e1}</Project>
-      <Name>Sorocaba.Commons.Ninject</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
