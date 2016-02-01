@@ -108,7 +108,7 @@ namespace Sorocaba.Commons.Entity {
         }
 
         internal static string LikeNotSupportedForDataType(string propertyType, string property) {
-            return string.Format(GetString("LikeNotSupportedForDataType"), property);
+            return string.Format(GetString("LikeNotSupportedForDataType"), propertyType, property);
         }
 
         internal static string ThereAreValidationErrors { get {

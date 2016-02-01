@@ -126,21 +126,61 @@ namespace Sorocaba.Commons.Entity.Pagination {
 
             if (fOperator == Operators.LIKE.Symbol || fOperator == Operators.LIKE_ALTERNATIVE.Symbol) {
 
-                argumentExpression = Expression.Constant(fValue.ToString());
-
                 if (propType == (typeof(bool)) || propType == (typeof(bool?))) {
-                    Exception(Strings.LikeNotSupportedForDataType(propType.Name, fName));
+                    fOperator = Operators.EQUAL.Symbol;
                 }
 
                 else if (propType == (typeof(char)) || propType == (typeof(char?))) {
-                    Exception(Strings.LikeNotSupportedForDataType(propType.Name, fName));
+                    fOperator = Operators.EQUAL.Symbol;
                 }
 
                 else if (propType == (typeof(DateTime)) || propType == (typeof(DateTime?))) {
-                    Exception(Strings.LikeNotSupportedForDataType(propType.Name, fName));
+
+                    argumentExpression = Expression.Constant(((DateTime) fValue).ToString("dd/MM/yyyy"));
+
+                    var dateConvertedProperty = Expression.Convert(propertyExpression, typeof(DateTime?));
+                    var partConversionMethod = typeof(SqlFunctions).GetMethod("DatePart", new Type[] { typeof(string), typeof(DateTime?) });
+                    var dayPart = Expression.Call(partConversionMethod, Expression.Constant("dd", typeof(string)), dateConvertedProperty);
+                    var monthPart = Expression.Call(partConversionMethod, Expression.Constant("mm", typeof(string)), dateConvertedProperty);
+                    var yearPart = Expression.Call(partConversionMethod, Expression.Constant("yyyy", typeof(string)), dateConvertedProperty);
+
+                    var stringConversionMethod = typeof(SqlFunctions).GetMethod("StringConvert", new Type[] { typeof(decimal?), typeof(int?) });
+                    var convertedDayPart = Expression.Call(stringConversionMethod, Expression.Convert(dayPart, typeof(decimal?)), Expression.Constant(2, typeof(int?)));
+                    var convertedMonthPart = Expression.Call(stringConversionMethod, Expression.Convert(monthPart, typeof(decimal?)), Expression.Constant(2, typeof(int?)));
+                    var convertedYearPart = Expression.Call(stringConversionMethod, Expression.Convert(yearPart, typeof(decimal?)), Expression.Constant(4, typeof(int?)));
+
+                    var concatMethod = typeof(string).GetMethod("Concat", new Type[] { typeof(string[]) });
+                    var rightMethod = typeof(DbFunctions).GetMethod("Right", new Type[] { typeof(string), typeof(long?) });
+                    var trimMethod = typeof(string).GetMethod("Trim", new Type[] { });
+
+                    convertedDayPart = Expression.Call(convertedDayPart, trimMethod);
+                    convertedDayPart = Expression.Call(
+                        concatMethod,
+                        Expression.NewArrayInit(typeof(string),
+                            Expression.Constant("0", typeof(string)), convertedDayPart
+                        )
+                    );
+                    convertedDayPart = Expression.Call(rightMethod, convertedDayPart, Expression.Constant(2L, typeof(long?)));
+
+                    convertedMonthPart = Expression.Call(convertedMonthPart, trimMethod);
+                    convertedMonthPart = Expression.Call(
+                        concatMethod,
+                        Expression.NewArrayInit(typeof(string),
+                            Expression.Constant("0", typeof(string)), convertedMonthPart
+                        )
+                    );
+                    convertedMonthPart = Expression.Call(rightMethod, convertedMonthPart, Expression.Constant(2L, typeof(long?)));
+
+                    propertyExpression = Expression.Call(
+                        concatMethod,
+                        Expression.NewArrayInit(typeof(string),
+                            convertedDayPart, Expression.Constant("/", typeof(string)), convertedMonthPart, Expression.Constant("/", typeof(string)), convertedYearPart
+                        )
+                    );
                 }
                 
                 else if(propType != typeof(string)) {
+                    argumentExpression = Expression.Constant(fValue.ToString());
                     var convertiblePropertyType = typeof(decimal?);
                     var convertedProperty = Expression.Convert(propertyExpression, convertiblePropertyType);
                     var conversionMethod = typeof(SqlFunctions).GetMethod("StringConvert", new Type[] { convertiblePropertyType, typeof(int?) });
