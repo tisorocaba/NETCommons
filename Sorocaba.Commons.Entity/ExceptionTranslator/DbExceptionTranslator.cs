@@ -45,7 +45,7 @@ namespace Sorocaba.Commons.Entity.ExceptionTranslator {
                     if (regex.IsMatch(newException.Message)) {
                         string constraintName = regex.Matches(newException.Message)[0].Groups["cName"].ToString();
                         string constraintMessage = GetConstraintMessage(constraintName);
-                        if (message != null) {
+                        if (constraintMessage != null) {
                             message = constraintMessage;
                         }
                     }

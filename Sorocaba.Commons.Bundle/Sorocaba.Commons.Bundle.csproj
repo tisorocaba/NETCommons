@@ -59,8 +59,8 @@
       <HintPath>..\packages\Sorocaba.Commons.Comdata.2.0.0.0\lib\net45\Sorocaba.Commons.Comdata.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sorocaba.Commons.Entity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sorocaba.Commons.Entity.1.0.0.0\lib\net45\Sorocaba.Commons.Entity.dll</HintPath>
+    <Reference Include="Sorocaba.Commons.Entity, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sorocaba.Commons.Entity.1.0.0.3\lib\net45\Sorocaba.Commons.Entity.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sorocaba.Commons.Foundation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
