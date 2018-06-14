@@ -22,7 +22,7 @@ namespace Sorocaba.Commons.Http.Json {
 
             settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             settings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-            settings.NullValueHandling = NullValueHandling.Ignore;
+            settings.NullValueHandling = NullValueHandling.Include;
             settings.Formatting = Formatting.None;
             settings.DateFormatString = "dd/MM/yyyy HH:mm:ss";
             settings.Error = (sender, a) => {
