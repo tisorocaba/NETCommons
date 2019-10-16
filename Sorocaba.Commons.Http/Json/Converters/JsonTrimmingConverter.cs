@@ -15,6 +15,9 @@ namespace Sorocaba.Commons.Http.Json.Converters {
         public override bool CanRead { get { return true; } }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer) {
+            if (reader.Value == null) {
+                return null;
+            }
             string value = ((string) reader.Value).Trim();
             return (value.Length == 0) ? null : value;
         }

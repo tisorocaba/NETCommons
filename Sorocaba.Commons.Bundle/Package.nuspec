@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>Sorocaba.Commons.Entity</id>
-    <version>2.5.0.1</version>
+    <id>Sorocaba.Commons.Bundle</id>
+    <version>2.5.0.0</version>
     <authors>Prefeitura de Sorocaba</authors>
     <owners>Prefeitura de Sorocaba</owners>
-    <description>NETCommons Entity</description>
+    <description>NETCommons Bundle</description>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
   </metadata>
 </package>
